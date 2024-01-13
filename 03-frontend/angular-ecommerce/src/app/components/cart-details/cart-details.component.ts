@@ -19,7 +19,6 @@ export class CartDetailsComponent implements OnInit {
     this.listCartDetails();
   }
 
-
   listCartDetails() {
     // get a handle (access) to the cart items
     this.cartItems = this.cartService.cartItems;
@@ -39,16 +38,15 @@ export class CartDetailsComponent implements OnInit {
 
   }
 
-
-
-  decrementQuantity(theCartItem: CartItem) {
-    
-    throw new Error('Method not implemented.');
-
-  }
   incrementQuantity(theCartItem: CartItem) {
     this.cartService.addToCart(theCartItem);
   }
 
+  decrementQuantity(theCartItem: CartItem) {
+    this.cartService.decrementQuantity(theCartItem);
+  }
 
+  remove(theCartItem: CartItem){
+    this.cartService.remove(theCartItem);
+  }
 }
