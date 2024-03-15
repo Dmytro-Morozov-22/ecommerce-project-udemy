@@ -70,9 +70,6 @@ const routes: Routes = [
     OktaAuthModule
   ],
   providers: [ProductService, { provide: OKTA_CONFIG, useValue: { oktaAuth }}],
-
-
-
   bootstrap: [AppComponent]
 })
 export class AppModule { }
