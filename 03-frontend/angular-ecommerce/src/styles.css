@@ -215,7 +215,11 @@ section{
 }
 
 .au-input-xl{
-    min-width:935px
+    min-width:600px /* it was 935px */
+}
+
+.ml-15px{
+    margin-left: 15px;
 }
 
 input.au-input.au-input-xl{
