@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
 
-@CrossOrigin("http://localhost:4200")
+// @CrossOrigin("http://localhost:4200") can delete because it was used cors.addMapping() in MyDataRestConfig.class
 @RepositoryRestResource
 public interface StateRepository extends JpaRepository<State, Integer> {
 
