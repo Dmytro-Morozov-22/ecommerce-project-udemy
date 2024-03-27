@@ -1,9 +1,6 @@
 package com.dmtrmrzv.ecomerce.config;
 
-import com.dmtrmrzv.ecomerce.entity.Country;
-import com.dmtrmrzv.ecomerce.entity.Product;
-import com.dmtrmrzv.ecomerce.entity.ProductCategory;
-import com.dmtrmrzv.ecomerce.entity.State;
+import com.dmtrmrzv.ecomerce.entity.*;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.metamodel.EntityType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,11 +31,13 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
 
         HttpMethod[] theUnsupportedActions = {HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE, HttpMethod.PATCH};
+
         // disable HTTP methods for Product: PUT, POST and DELETE
         disableHttpMethods(Product.class, config, theUnsupportedActions);
         disableHttpMethods(ProductCategory.class, config, theUnsupportedActions);
         disableHttpMethods(Country.class, config, theUnsupportedActions);
         disableHttpMethods(State.class, config, theUnsupportedActions);
+        disableHttpMethods(Order.class, config, theUnsupportedActions);
 
         //call an internal helper method
         exposeIds(config);
