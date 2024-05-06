@@ -21,7 +21,7 @@ public class CheckoutServiceImpl implements CheckoutService {
 
     private CustomerRepository customerRepository;
     @Autowired
-    public CheckoutServiceImpl(CustomerRepository customerRepository, @Value("$stripe.key.secret") String secretKey) {
+    public CheckoutServiceImpl(CustomerRepository customerRepository, @Value("${stripe.key.secret}") String secretKey) {
         this.customerRepository = customerRepository;
 
         //initialize Stripe API with secret key
